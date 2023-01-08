@@ -70,26 +70,32 @@
     <div class="container">
       <div class="d-flex ">
         <h2>
-          Contact Us
+          Send a new point of interest
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6">
 
-          <form action="">
+          <form action="https://formsubmit.co/miguel.f.cabral@goloco.tech" method="post">
             <div class="contact_form-container">
               <div>
                 <div>
-                  <input type="text" placeholder="Name">
+                  <input type="email" placeholder="Your Email" name="email" required>
                 </div>
                 <div>
-                  <input type="text" placeholder="Phone Number">
+                  <input type="placename" placeholder="Place Name" name="placename" required>
                 </div>
-                <div>
-                  <input type="email" placeholder="Email">
+                <div style="float:left">
+                  <input type="number" placeholder="Latitude" name="lat" size="30" required>
+                </div>
+                <div style="float:left">
+                  <input type="number" placeholder="Longitude" name="lon" size="30" required>
                 </div>
                 <div class="mt-5">
-                  <input type="text" placeholder="Message">
+                  <input type="text" placeholder="Photo Url (imgur)" name="photo" required>
+                </div>
+                <div class="mt-5">
+                  <input type="text" placeholder="Short description" name="description" required>
                 </div>
                 <div class="mt-5">
                   <button type="submit">
@@ -104,7 +110,7 @@
         </div>
         <div class="col-md-6">
           <div class="contact_img-box">
-            <img src="images/contact-img.png" alt="">
+            <img src="images/point-of-interest-database.jpg" alt="" style="border-radius: 20%;">
           </div>
         </div>
       </div>
