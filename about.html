@@ -15,13 +15,15 @@
   <title>Go Loco</title>
 
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+    rel="stylesheet" />
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
@@ -52,8 +54,8 @@
             <div id="myNav" class="overlay">
               <div class="overlay-content">
                 <a href="index.html">HOME</a>
-                <a href="about.html">ABOUT</a>
-                <a href="feature.html">FEATURE</a>
+                <a href="about.html">IMPLEMENTATION</a>
+                <!-- <a href="feature.html">FEATURE</a> -->
                 <a href="sendpoint.html">SEND NEW PLACE </a>
               </div>
             </div>
@@ -70,30 +72,132 @@
     <div class="container">
       <div class="heading_container d-flex justify-content-lg-start">
         <h2>
-          About Us
+          Project Implementation
         </h2>
       </div>
-      <div class="layout_padding2-top">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="detail-box b-1">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              </p>
-              <a href="">
-                Read More
-              </a>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="detail-box b-2">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              </p>
-            </div>
-          </div>
+      <div>
+        <h2>
+          Strucure
+        </h2>
+      </div>
+      <div>
+        <p>
+          For a better organization of the project and also for code reuse,<br> our project was structured as in the
+          figure below :
+        </p>
+        <img src="images/estrutura.png" alt="structure schema" height="130px" style="margin-left: 150px;">
+        <p>
+          Each folder corresponds to a page and within this folder we can have <br>two folders, "utils" where the files
+          with the widget logic and "widgets" where <br>the widgets are, some of which are reused on other pages
+        </p>
+      </div>
+      <div>
+        <h2>
+          Architecture
+        </h2>
+      </div>
+      <div>
+        <div>
+          <h3>
+            Register and Login
+          </h3>
+        </div>
+        <div>
+          <p>
+            The application is protected with biometric data, after that if the user is not <br> registered yet is
+            redirected to the registration page, after this registration is saved <br> a key in the SharedPreferences of
+            the device. The login is done automatically <br>after biometric authentication every time the user restarts
+            the application using the key
+          </p>
         </div>
       </div>
+      <div>
+        <div>
+          <h3>
+            BLoC
+          </h3>
+        </div>
+        <div>
+          <p>
+            A BLoC-based architecture was used to separate the application logic and data from the UI <br> In the BLoC
+            of the achievements is implemented the logic of the achievements, <br> these achievements are based on the
+            number of steps taken. In the BLoC of the map, <br> all the logic related to the loading of the map is
+            implemented, the calculation of the distance <br> to the objective and the angle between the current
+            position and the objective, <br> these two are not shown on the map page but on the compass page <br> In the
+            BLoC of the markers, the application loads the data of the locations <br> The Profile BLoC is where all the
+            user-related logic is located, <br> whether it is creating a new user profile or loading an already created
+            profile through a key <br> saved in the SharedPreferences of the device
+          </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3>
+            Home Page
+          </h3>
+        </div>
+        <div>
+          <p>
+            The main panel is divided into 2 sections:
+          </p>
+          <ol type="I">
+            <li>The header where we have small welcome message followed by the user's name</li>
+            <li>The data where the user can track their progress in terms of latest discoveries and unlocked
+              achievements <br>Clicking the "Procurar Locais" button brings up a new page, the map page</li>
+          </ol>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3>
+            Compass
+          </h3>
+        </div>
+        <div>
+          <p>
+            In order to guide the user to the location we used a compass, inside it <br> we have the distance from the
+            point where the user is to the location and an arrow that points to the goal <br> these two are calculated
+            in the map bloc as mentioned in the BLoC section
+          </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3>
+            QR Code
+          </h3>
+        </div>
+        <div>
+          <p>
+            In order to get verification that the user has arrived at the location, each location has its own QR code
+          </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3>
+            API
+          </h3>
+        </div>
+        <div>
+          <p>
+            In order for the application to use remote data an API was created using the typescript language<br> running on a NestJS server. We created methods to create user profiles <br> to return profiles, to return markers and to return achievements. This data is stored in a PostgreSQL database
+          </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3>
+            Architecture Diagram
+          </h3>
+        </div>
+        <div>
+          <img src="images/GoLocoArchitectureDiagram.png" alt="Architecture Diagram" height="300px" style="margin-left: 30px;">
+        </div>
+      </div>
+
+    </div>
+
     </div>
   </section>
 
@@ -104,7 +208,7 @@
   <section class="info_section layout_padding-top">
     <div class="info_logo-box">
       <h2>
-        Go Loco
+        GO LOCO
       </h2>
     </div>
     <div class="container layout_padding2">
@@ -114,27 +218,29 @@
             About Us
           </h5>
           <p>
-            dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt r
+            Go Loco is a geocaching mobile application developed for the Geographic Information Systems for Social
+            Sciences course taught at the University of Aveiro
           </p>
         </div>
         <div class="col-md-3">
           <h5>
-            Useful Link
+            Useful Links
           </h5>
           <ul>
             <li>
-              <a href="">
-                Video games
+              <a href="https://www.ua.pt/">
+                University of Aveiro
               </a>
             </li>
             <li>
-              <a href="">
-                Remote control
+              <a href="https://www.ua.pt/pt/uc/15129">
+                Course Information
               </a>
             </li>
             <li>
-              <a href="">
-                3d controller
+              <a
+                href="https://apkfab.com/upload/apk/download?package_id=com.example.cm_project&h=c6a8ea15aa06befaf6c7f3f940c3e073556c9edf2668527151a4950bc3205e06&v=1673137272326">
+                App Download
               </a>
             </li>
           </ul>
@@ -143,9 +249,13 @@
           <h5>
             Contact Us
           </h5>
-          <p>
-            dolor sit amet, consectetur magna aliqua. quisdotempor incididunt ut e
-          </p>
+          <ul>
+            <li>
+              <a href="mailto: support@goloco.tech">
+                support@goloco.tech
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="col-md-3">
 
@@ -154,8 +264,8 @@
               Newsletter
             </h5>
             <div class="form_container">
-              <form action="">
-                <input type="email" placeholder="Enter your email">
+              <form action="https://formsubmit.co/6da56009fff8f37ef9a4b282fae0eb3e" method="post">
+                <input type="email" placeholder="Enter your email" name="emailnewsletter" required>
                 <button type="submit">
                   Subscribe
                 </button>
@@ -192,11 +302,12 @@
   <!-- footer section -->
   <section class="container-fluid footer_section">
     <p>
-      &copy; 2019 All Rights Reserved. Design by
-      <a href="https://html.design/">Free Html Templates</a>
+      <a href="">GoLoco</a>
+      &copy; 2023 All Rights Reserved
     </p>
   </section>
   <!-- footer section -->
+
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
